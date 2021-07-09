@@ -1,4 +1,4 @@
-package com.cognizant.springlearn.model;
+package com.cognizant.springlearn;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -6,36 +6,35 @@ import javax.validation.constraints.Size;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.cognizant.springlearn.SpringLearnApplication;
+
 public class Country {
 	
 	@NotNull
-	@Size(min=2,max=2,message="Country code should be 2 characters")
+	@Size(min = 2,max=2,message = "Country code should be two characters")
 	private String code;
 	private String name;
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(Country.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringLearnApplication.class);
+
 	
 	public Country() {
-		LOGGER.info("Inside Country Constructor");
+		super();
+		LOGGER.info("inside Country");
 	}
-	
+
 	public String getCode() {
-		LOGGER.info("Inside getCode()");
 		return code;
 	}
 
 	public void setCode(String code) {
-		LOGGER.info("Inside setCode()");
 		this.code = code;
 	}
 
 	public String getName() {
-		LOGGER.info("Inside getName()");
 		return name;
 	}
 
 	public void setName(String name) {
-		LOGGER.info("Inside setName()");
 		this.name = name;
 	}
 
@@ -43,7 +42,5 @@ public class Country {
 	public String toString() {
 		return "Country [code=" + code + ", name=" + name + "]";
 	}
-
-	
 
 }
