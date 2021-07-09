@@ -15,6 +15,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
+import com.Cognizant.ormlearnRelations.dao.EmployeeDao;
+import com.Cognizant.ormlearnRelations.exception.EmployeeNotFoundException;
 import com.Cognizant.ormlearnRelations.model.Employee;
 import com.Cognizant.ormlearnRelations.repository.EmployeeRepository;
 
@@ -25,6 +27,8 @@ public class EmployeeService {
 	
 	@Autowired
 	EmployeeRepository employeeRepository;
+	@Autowired
+    EmployeeDao employeeDao;
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeService.class);
 
@@ -60,6 +64,14 @@ public class EmployeeService {
 		List<Employee> employeeList = (List<Employee>)cxt.getBean("employeeList");
 		return employeeList;
 	}
+	
+	public Employee updateEmployee(Employee employee) throws EmployeeNotFoundException{
+        return employeeDao.updateEmployee(employee);
+    }
+
+    public Employee deleteEmployee(Employee employee) throws EmployeeNotFoundException{
+        return employeeDao.deleteEmployee(employee);
+    }
 	
 	
 }

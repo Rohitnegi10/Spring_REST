@@ -65,12 +65,10 @@ public class CountryController {
 	}
 	
 	@PostMapping
+	@ResponseBody
 	public Country addCountry(@Valid @RequestBody Country country) 
 	{
 		LOGGER.info("INSIDE POST Request");
-		
-
-		
 		return country;
 	}
 
