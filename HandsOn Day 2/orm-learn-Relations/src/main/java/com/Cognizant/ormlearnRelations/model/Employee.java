@@ -106,7 +106,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return id + ": " + name + ": " + salary + ": " + permanent + ": " + dateOfBirth;
+		return id + ": " + name + ": " + salary + ": " + permanent + ": " + dateOfBirth + department.toString();
 	}
 
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	<bean id="payroll"
+		class="com.Cognizant.ormlearnRelations.model.Department">
+		<property name="id" value="1" />
+		<property name="name" value="Payroll" />
+	</bean>
+	<bean id="HR"
+		class="com.Cognizant.ormlearnRelations.model.Department">
+		<property name="id" value="2" />
+		<property name="name" value="HR" />
+	</bean>
+
+	<bean id="emp1"
+		class="com.Cognizant.ormlearnRelations.model.Employee">
+		<property name="id" value="1" />
+		<property name="name" value="Rohit" />
+		<property name="salary" value="2000000" />
+		<property name="Department" ref="payroll" />
+	</bean>
+	<bean id="emp2"
+		class="com.Cognizant.ormlearnRelations.model.Employee">
+		<property name="id" value="2" />
+		<property name="name" value="Akshat" />
+		<property name="salary" value="1000000" />
+		<property name="Department" ref="HR" />
+	</bean>
+	<bean id="emp3"
+		class="com.Cognizant.ormlearnRelations.model.Employee">
+		<property name="id" value="3" />
+		<property name="name" value="Rachit" />
+		<property name="salary" value="500000" />
+		<property name="Department" ref="payroll" />
+	</bean>
+	<bean id="emp4"
+		class="com.Cognizant.ormlearnRelations.model.Employee">
+		<property name="id" value="4" />
+		<property name="name" value="Pranshu" />
+		<property name="salary" value="500000" />
+		<property name="Department" ref="HR" />
+	</bean>
+
+	<bean id="employeeList" class="java.util.ArrayList">
+		<constructor-arg>
+		<list>
+		<ref bean="emp1"/>
+		<ref bean="emp2"/>
+		<ref bean="emp3"/>
+		<ref bean="emp4"/>
+		</list>
+		</constructor-arg>
+	</bean>
+
+</beans>

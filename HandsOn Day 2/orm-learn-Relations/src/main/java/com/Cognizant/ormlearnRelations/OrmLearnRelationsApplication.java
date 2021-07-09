@@ -1,9 +1,11 @@
 package com.Cognizant.ormlearnRelations;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -38,7 +40,14 @@ public class OrmLearnRelationsApplication {
 		// testAddSkillToEmployee();
 		// testGetAllPermanentEmployees();
 		// testGetAverageSalary();
-		testGetAllEmployeesNative();
+		//testGetAllEmployeesNative();
+	
+		
+		/*
+		 * ApplicationContext cxt = new ClassPathXmlApplicationContext("employee.xml");
+		 * List<Employee> employeeList = (List<Employee>)cxt.getBean("employeeList");
+		 * LOGGER.info(employeeList.toString());
+		 */
 	}
 
 	private static void testGetEmployee() {
